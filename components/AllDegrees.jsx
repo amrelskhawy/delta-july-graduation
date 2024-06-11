@@ -139,7 +139,7 @@ export const AllDegrees = ({ student }) => {
       </div>
 
 
-      <div className='mt-12 text-2xl font-medium grid gap-3'>
+      <div className='mt-12 text-lg md:text-2xl font-medium grid gap-3'>
         <div className='top grid grid-cols-3 gap-2 text-center'>
           <p>
             المجموع الكلى
@@ -153,7 +153,7 @@ export const AllDegrees = ({ student }) => {
         </div>
         <div className='bottom font-bold grid grid-cols-3 gap-2 text-center'>
           <p>
-            {student.total} <br /> <hr className='w-24 border-[1.5px] border-red-500 mx-auto' /> <span className='text-red-600'>480</span>
+            {student.total} <br /> <hr className='w-24 border-[1px] border-red-500 mx-auto' /> <span className='text-red-600'>480</span>
           </p>
           <p>
             {((student.total / 480) * 100).toFixed(2)}%
