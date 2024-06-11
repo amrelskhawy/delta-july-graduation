@@ -1,4 +1,4 @@
-// File: C:\Users\Amr\Desktop\delta-july-result\app\layout.js
+// File: C:\Users\Amr\Desktop\july-grad\app\layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Chip } from "@nextui-org/react";
+import Image from "next/image";
 
 export default function StudentInfo({ student }) {
 
@@ -9,11 +10,13 @@ export default function StudentInfo({ student }) {
   const {
     name,
     id,
+    address,
     code,
-    women,
-    pharma,
-    analysis,
-    total
+    beg,
+    first,
+    second,
+    third,
+    birth
   } = student
 
   function getStatus(grade, max) {
@@ -55,178 +58,83 @@ export default function StudentInfo({ student }) {
 
 
   return (
-    <div className="relative grid gap-4 mb-24">
+    <div className="relative grid gap-4 mb-16">
 
       <h3 className="section__title text-3xl">معلومات الطالب</h3>
 
-      <Table isStriped aria-label="Example static collection table">
-        <TableHeader>
-          <TableColumn className="text-start">اسم الطالب</TableColumn>
-          <TableColumn className="text-start">
-            {name}
-          </TableColumn>
-        </TableHeader>
-        <TableBody>
-          <TableRow key="1">
-            <TableCell>الرقم القومى</TableCell>
-            <TableCell>
-              {id}
-            </TableCell>
-          </TableRow>
-          <TableRow key="2">
-            <TableCell>الاكاديمية</TableCell>
-            <TableCell>
-              الدلتا للتدريب
-            </TableCell>
-          </TableRow>
-
-          {code && <TableRow key="3">
-            <TableCell>الرقم الاكاديميى</TableCell>
-            <TableCell>
-              {code}
-            </TableCell>
-          </TableRow>}
-
-          <TableRow key="4">
-            <TableCell>الفرع</TableCell>
-            <TableCell>
-              {
-                `${code}`.slice(0, 1) === 'D' ? 'دسوق' : 'كفر الشيخ'
-              }
-
-            </TableCell>
-          </TableRow>
+      <div className="">
+        {/* Info */}
+        <div className="w-full grid gap-4">
 
 
 
-
-        </TableBody>
-      </Table>
-
-      {/* <h3 className="section__title">
-        الأقساط الدراسية
-      </h3>
+          <div className="flex gap-4">
+            <div className="w-full">
+              <h3 className="section__title">
+                البيانات الشخصية
+              </h3>
 
 
-      <Table isStriped aria-label="Example static collection table">
-        <TableHeader>
-          <TableColumn className="text-start">
-            القسط
-          </TableColumn>
-          <TableColumn className="text-center">
-            الحالة
-          </TableColumn>
+              <Table isStriped  >
+                <TableHeader>
+                  <TableColumn className="text-start">اسم الطالب</TableColumn>
+                  <TableColumn className="text-start">
+                    {name}
+                  </TableColumn>
+                </TableHeader>
+                <TableBody>
+                  <TableRow key="1">
+                    <TableCell>الرقم القومى</TableCell>
+                    <TableCell>
+                      {id}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow key="2">
+                    <TableCell>العنوان</TableCell>
+                    <TableCell>
+                      {address}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow key="3">
+                    <TableCell>تاريخ الميلاد</TableCell>
+                    <TableCell>
+                      {birth}
+                    </TableCell>
+                  </TableRow>
 
-        </TableHeader>
-        <TableBody>
-          <TableRow key="1">
-            <TableCell>
-              مقدم
-            </TableCell>
-            <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={beg === 1 ? 'success' : "danger"}>
-                {beg === 1 ? 'تم الدفع' : 'لم يتم الدفع'}
-              </Chip>
-            </TableCell>
-          </TableRow>
+                  {code && <TableRow key="4">
+                    <TableCell>الرقم الاكاديميى</TableCell>
+                    <TableCell>
+                      {code}
+                    </TableCell>
+                  </TableRow>}
 
-          <TableRow key="2">
-            <TableCell>
-              القسط الاول
-            </TableCell>
-            <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={first === 1 ? 'success' : "danger"}>
-                {first === 1 ? 'تم الدفع' : 'لم يتم الدفع'}
-              </Chip>
-            </TableCell>
-          </TableRow>
+                  <TableRow key="5">
+                    <TableCell>الفرع</TableCell>
+                    <TableCell>
+                      {
+                        `${code}`.slice(0, 1) === 'D' ? 'دسوق' : 'كفر الشيخ'
+                      }
 
-          <TableRow key="3">
-            <TableCell>
-              القسط التانى
-            </TableCell>
-            <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={second === 1 ? 'success' : "danger"}>
-                {second === 1 ? 'تم الدفع' : 'لم يتم الدفع'}
-              </Chip>
-            </TableCell>
-          </TableRow>
+                    </TableCell>
+                  </TableRow>
 
-          <TableRow key="4">
-            <TableCell>
-              القسط التالت
-            </TableCell>
-            <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={third === 1 ? 'success' : "danger"}>
-                {third === 1 ? 'تم الدفع' : 'لم يتم الدفع'}
-              </Chip>
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table> */}
 
-      <h3 className="section__title">
-        نتيجة الترم التالت
-      </h3>
 
-      <Table aria-label="Example static collection table" >
-        <TableHeader >
-          <TableColumn className="text-start">المادة</TableColumn>
-          <TableColumn className="text-start">درجة الطالب</TableColumn>
-          <TableColumn className="text-start">الدرجة العظمى</TableColumn>
-        </TableHeader>
-        <TableBody>
-          <TableRow key="1">
-            <TableCell className="font-medium">تمريض النساء و الاطفال</TableCell>
-            <TableCell className="text-center">
 
-              <Chip className="text-white font-bold" color={getColor(women, 50)}>
-              {getStatus(women, 50)}
-              </Chip>
-            </TableCell>
-            <TableCell className="text-center">50</TableCell>
-          </TableRow>
-          <TableRow key="2">
-            <TableCell className="font-medium">الفارما</TableCell>
-            <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(pharma, 50)}>
-                {getStatus(pharma, 50)}
-              </Chip>
-            </TableCell>
-            <TableCell className="text-center">50</TableCell>
-          </TableRow>
-          <TableRow key="3">
-            <TableCell className="font-medium">التحاليل الطبية</TableCell>
-            <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={getColor(analysis, 50)}>
-              {getStatus(analysis, 50)}
-              </Chip>
-            </TableCell>
-            <TableCell className="text-center">50</TableCell>
-          </TableRow>
-          <TableRow key="5">
-            <TableCell className="font-medium">المجموع الكلى</TableCell>
-            <TableCell className="text-center">
-              <Chip className="text-white font-bold" color={isPassed()} >
-                {total}
-              </Chip>
+                </TableBody>
+              </Table>
+            </div>
+            <div className="w-64 h-84 mt-2">
+              <Image width={800} height={800} src={`/pics/${id}.jpg`} alt="" />
+            </div>
+          </div>
 
-            </TableCell>
-            <TableCell className="text-center">
-              150
-            </TableCell>
-          </TableRow>
-          <TableRow key="5">
-            <TableCell className="font-medium">حالة الطالب</TableCell>
-            <TableCell></TableCell>
-            <TableCell colSpan={2}>
-              <Chip className="text-white font-bold" color={isPassed()}>
-                {isPassed() === 'success' ? 'ناجح' : 'راسب'}
-              </Chip>
-            </TableCell>
-          </TableRow>
-        </TableBody>
-      </Table>
+        </div>
+
+
+
+      </div>
     </div>
   );
 }
