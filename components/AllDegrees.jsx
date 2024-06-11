@@ -19,70 +19,125 @@ export const AllDegrees = ({ student }) => {
       <h2 className='text-2xl font-medium text-center mb-8'>
         بيان بدرجات الطالب المذكور أعلاه
       </h2>
-      <div class="table_component" role="region" tabindex="0">
-        <table>
-          <thead>
-            <tr>
-              {
-                tableHeaders.map(head => <th style={{
-                  fontSize: '.75rem'
-                }}>{head}</th>)
-              }
+      <div className="table_component" role="region" tabindex="0">
+
+        {/* Mobile Div */}
+
+        <div className='mobile-table  p-4 grid gap-2'>
+          <table>
+            <thead>
+              <tr>
+
+                <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
+                  التمريض النظرى
+                </th>
+                <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
+                  التمريض العملى
+                </th>
+                <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
+                  الترمنولوجى
+                </th>
+                <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
+                  التمريض الباطنى و الجراحي
+                </th>
+                <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
+                  التشريح
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-2 border border-gray-300">
+                  {student.theory}
+                  <br />
+                  <hr className='' />
+                  <span className='text-red-600 font-bold'>50</span>
+
+                </td>
+                <td className="p-2 border border-gray-300">{student.practical}
+                  <br />
+                  <hr className='' />
+                  <span className='text-red-600 font-bold'>90</span>
+                </td>
+                <td className="p-2 border border-gray-300">{student.E}
+                  <br />
+                  <hr className='' />
+                  <span className='text-red-600 font-bold'>30</span>
+                </td>
+                <td className="p-2 border border-gray-300">{student.surgical}
+                  <br />
+                  <hr className='' />
+                  <span className='text-red-600 font-bold'>50</span>
+                </td>
+                <td className="p-2 border border-gray-300">{student.anatomy}
+                  <br />
+                  <hr className='' />
+                  <span className='text-red-600 font-bold'>50</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table>
+            <thead>
+              <tr>
+
+                <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
+                  الاسعافات الأولية
+                </th>
+                <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
+                  مكافحة العدوى
+                </th>
+                <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
+                  تمريض النساء و الأطفال
+                </th>
+                <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
+                  فارما
+                </th>
+                <th className="p-2 text-xs font-semibold border border-gray-300 bg-gray-100">
+                  التحاليل الطبية
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-2 border border-gray-300">
+                  {student.first_aids}
+                  <br />
+                  <hr className='' />
+                  <span className='text-red-600 font-bold'>30</span>
+
+                </td>
+                <td className="p-2 border border-gray-300">{student.infection_control}
+                  <br />
+                  <hr className='' />
+                  <span className='text-red-600 font-bold'>30</span>
+                </td>
+                <td className="p-2 border border-gray-300">{student.women}
+                  <br />
+                  <hr className='' />
+                  <span className='text-red-600 font-bold'>50</span>
+                </td>
+                <td className="p-2 border border-gray-300">{student.pharma}
+                  <br />
+                  <hr className='' />
+                  <span className='text-red-600 font-bold'>50</span>
+                </td>
+                <td className="p-2 border border-gray-300">{student.medical}
+                  <br />
+                  <hr className='' />
+                  <span className='text-red-600 font-bold'>50</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
 
 
-            </tr>
-          </thead>
-          <tbody>
-            {/* Student Mark */}
-            <tr>
-              <td>
-                {student.theory}
-              </td>
-              <td>
-                {student.practical}
-              </td>
-              <td>
-                {student.E}
-              </td>
-              <td>
-                {student.surgical}
-              </td>
-              <td>
-                {student.anatomy}
-              </td>
-              <td>
-                {student.first_aids}
-              </td>
-              <td>
-                {student.infection_control}
-              </td>
-              <td>
-                {student.women}
-              </td>
-              <td>
-                {student.pharma}
-              </td>
-              <td>
-                {student.medical}
-              </td>
-            </tr>
 
-            {/* Full Marks */}
-            <tr>
-              <td style={{ color: "red" }}><b>50</b></td>
-              <td style={{ color: "red" }}><b>90</b></td>
-              <td style={{ color: "red" }}><b>30</b></td>
-              <td style={{ color: "red" }}><b>50</b></td>
-              <td style={{ color: "red" }}><b>50</b></td>
-              <td style={{ color: "red" }}><b>30</b></td>
-              <td style={{ color: "red" }}><b>30</b></td>
-              <td style={{ color: "red" }}><b>50</b></td>
-              <td style={{ color: "red" }}><b>50</b></td>
-              <td style={{ color: "red" }}><b>50</b></td>
-            </tr>
-          </tbody>
-        </table>
       </div>
+
 
       <div className='mt-12 text-2xl font-medium grid gap-3'>
         <div className='top grid grid-cols-3 gap-2 text-center'>

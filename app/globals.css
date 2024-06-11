@@ -69,3 +69,60 @@ background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+
   color: #000000;
   padding: 5px;
 }
+
+.relative {
+  position: relative;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.section__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-3xl {
+  font-size: 2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.lg\\:grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 1024px) {
+  .lg\\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .lg\\:w-80 {
+    width: 20rem;
+  }
+  .lg\\:h-80 {
+    height: 20rem;
+  }
+}
+
+.object-cover {
+  object-fit: cover;
+}
