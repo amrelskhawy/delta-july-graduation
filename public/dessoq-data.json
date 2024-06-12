@@ -11573,5 +11573,30 @@
     "total": 269,
     "percent": 0.5604166666666667,
     "appreciation": "مقبول"
+  },
+  {
+    "م": 463,
+    "name": "أمنيه نبيل حلمي الجندي",
+    "id": 30312131802125,
+    "code": "D2023702069",
+    "birth": "2003/12/13",
+    "address": "البحيرة",
+    "beg": 1,
+    "first": 1,
+    "second": 1,
+    "third": 1,
+    "practical": 85,
+    "theory": 41.5,
+    "E": 25,
+    "surgical": 45.5,
+    "anatomy": 48,
+    "first_aids": 25,
+    "infection_control": 29,
+    "women": 50,
+    "pharma": 49,
+    "medical": 39,
+    "total": 437,
+    "percent": 0.910416666666667,
+    "appreciation": "امتياز"
   }
 ]
